@@ -120,6 +120,7 @@
         border: 1px solid black;
         cursor: pointer; }
         .Header .Header-navigation ul.menu li.menu-item a {
+          padding: 5px 30px;
           text-decoration: none;
           display: inline-block;
           border-radius: 0;
