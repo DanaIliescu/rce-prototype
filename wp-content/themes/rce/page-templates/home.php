@@ -5,9 +5,7 @@
 
 <div class="Row Row--top">
 	<div class="Column">
-		<article class="Article">
-			<h1 class="Article-title"><?php the_title(); ?></h1>
-			<div><?php the_content(); ?></div>
-		</article>
+		<h1 class="Page-Title"><?php the_title(); ?></h1>
+		<div><?php the_content(); ?></div>
 	</div>
 </div>

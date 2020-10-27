@@ -6,17 +6,24 @@
 	left: 0;
 	z-index: 2;
 	font-size: 16px;
-	box-shadow: 0 0 3px rgba(0,0,0,0.25);
 	color: black;
-	height: 70px;
+	height: 160px;
+
+	.Header-line {
+		position: absolute;
+		bottom: -10px;
+		left: 2.5%;
+		height: 30px;
+		width: 95%;
+		background-color: black;
+	}
 
 	.Header-logo {
-		margin-left: 3.5%;
 		position: absolute;
 		top: 13px;
-		left: 0;
-		width: 60px;
-		height: 40px;
+		left: 2.5%;
+		width: 160px;
+		height: 110px;
 		background-size: 100%;
 		background-repeat: no-repeat;
 		background-image: url("../images/logo.svg");
@@ -28,18 +35,33 @@
 			list-style-type: none;
 			li.menu-item {
 				display: inline-block;
-				padding: 10px;
+				padding: 5px 30px;
 				margin-top: 5px;
+				margin-right: 20px;
 				text-decoration: none;
+				border-radius: 10px;
+				border: 1px solid black;
+				cursor: pointer;
 				a {
 					text-decoration: none;
 					display: inline-block;
 					border-radius: 0;
 					color: black;
 				}
-				&.current-menu-item {
+				&:first-of-type {
+					position: absolute;
+					top: 80px;
+					right: 300px;
+					border: 1px solid $red;
+					background-color: $red;
+					transition: all 0.3s ease-in-out;
 					a {
-						color: grey;
+						color: white;
+
+					}
+					&:hover {
+						border: 1px solid darken($red, 7%);
+						background-color: darken($red, 7%);
 					}
 				}
 			}

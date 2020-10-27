@@ -8,3 +8,8 @@
 @import 'components/article';
 @import 'components/tag';
 @import 'components/discover';
+
+* {
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}

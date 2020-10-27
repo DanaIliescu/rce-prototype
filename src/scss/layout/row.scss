@@ -18,6 +18,10 @@
 		max-width: 100%;
 	}
 	&.Row--top {
-		padding-top: 70px;
+		padding-top: 180px;
+	}
+	&.Row--header {
+		width: 95%;
+		text-align: center;
 	}
 }

@@ -14,7 +14,10 @@
   .Row.Row--fullSize {
     max-width: 100%; }
   .Row.Row--top {
-    padding-top: 70px; }
+    padding-top: 180px; }
+  .Row.Row--header {
+    width: 95%;
+    text-align: center; }
 
 .Column {
   width: 100%;
@@ -85,16 +88,21 @@
   left: 0;
   z-index: 2;
   font-size: 16px;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
   color: black;
-  height: 70px; }
+  height: 160px; }
+  .Header .Header-line {
+    position: absolute;
+    bottom: -10px;
+    left: 2.5%;
+    height: 30px;
+    width: 95%;
+    background-color: black; }
   .Header .Header-logo {
-    margin-left: 3.5%;
     position: absolute;
     top: 13px;
-    left: 0;
-    width: 60px;
-    height: 40px;
+    left: 2.5%;
+    width: 160px;
+    height: 110px;
     background-size: 100%;
     background-repeat: no-repeat;
     background-image: url("../images/logo.svg"); }
@@ -104,16 +112,30 @@
       list-style-type: none; }
       .Header .Header-navigation ul.menu li.menu-item {
         display: inline-block;
-        padding: 10px;
+        padding: 5px 30px;
         margin-top: 5px;
-        text-decoration: none; }
+        margin-right: 20px;
+        text-decoration: none;
+        border-radius: 10px;
+        border: 1px solid black;
+        cursor: pointer; }
         .Header .Header-navigation ul.menu li.menu-item a {
           text-decoration: none;
           display: inline-block;
           border-radius: 0;
           color: black; }
-        .Header .Header-navigation ul.menu li.menu-item.current-menu-item a {
-          color: grey; }
+        .Header .Header-navigation ul.menu li.menu-item:first-of-type {
+          position: absolute;
+          top: 80px;
+          right: 300px;
+          border: 1px solid #FE0404;
+          background-color: #FE0404;
+          transition: all 0.3s ease-in-out; }
+          .Header .Header-navigation ul.menu li.menu-item:first-of-type a {
+            color: white; }
+          .Header .Header-navigation ul.menu li.menu-item:first-of-type:hover {
+            border: 1px solid #dd0101;
+            background-color: #dd0101; }
 
 .Footer {
   background-color: #cdcdcd;
@@ -134,7 +156,7 @@
     text-decoration: none;
     color: black;
     font-size: 36;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 22px; }
   .Article .Article-coverImage {
     text-align: center;
@@ -150,7 +172,7 @@
     margin-bottom: 20px; }
   .Article .Tag-label {
     font-size: 28px;
-    font-weight: 600;
+    font-weight: 500;
     margin-right: 30px; }
 
 .Tag {
@@ -164,7 +186,8 @@
   display: inline-block;
   padding-top: 5px;
   margin-right: 10px;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out; }
   .Tag:hover {
     background-color: #45AD4A; }
   .Tag--discover {
@@ -172,7 +195,7 @@
     margin-right: 40px;
     margin-bottom: 100px;
     font-size: 22px;
-    font-weight: 600;
+    font-weight: 500;
     width: 420px;
     height: 63px; }
   .Tag--chosen {
@@ -200,7 +223,7 @@
     border: 1px solid black; }
     .Discover .ArticleItem .ArticleItem-title a {
       font-size: 30px;
-      font-weight: 600;
+      font-weight: 500;
       padding: 0 35px;
       text-align: center;
       position: absolute;
@@ -220,5 +243,9 @@
         background-repeat: no-repeat;
         background-size: cover;
         transition: all 0.3s ease-in-out; }
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif; }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9jc3Mvc3R5bGUubWluLmNzcyIsInNvdXJjZVJvb3QiOiIifQ==*/
