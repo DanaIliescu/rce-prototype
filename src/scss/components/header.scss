@@ -35,7 +35,10 @@
 			list-style-type: none;
 			li.menu-item {
 				display: inline-block;
-				padding: 5px 30px;
+				padding-top: 5px;
+				text-align: center;
+				height: 32px;
+				width: 150px;
 				margin-top: 5px;
 				margin-right: 20px;
 				text-decoration: none;
@@ -43,7 +46,8 @@
 				border: 1px solid black;
 				cursor: pointer;
 				a {
-					padding: 5px 30px;
+					width: 100%;
+					height: 100%;
 					text-decoration: none;
 					display: inline-block;
 					border-radius: 0;
