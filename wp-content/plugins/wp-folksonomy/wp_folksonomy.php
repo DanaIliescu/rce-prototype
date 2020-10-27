@@ -117,15 +117,19 @@ function wp_folksonomy_tag_adder($output=''){
 			case "nopost": $message="Couldn't find post.";break;
 			case "duplicate": $message="Tag already added, but thanks.";break;
 			case "toolong": $message="Tag too long. Sorry.";break;
-			case "wait": $message="Thanks. Tag awaiting approval.";break;
+			case "wait": $message="Your tag will be submitted for review by our content editor soon.";break;
 			}
 		}
-		$output.='<form action="'.get_permalink($post->ID).'" method="post" id="tagadder">';
-		if($message) $output.="<p>$message</p>";
-		$output.='<p><input type="text" name="wp_folksonomy_newtag" id="wp_folksonomy_newtag" value="" size="22" />
-		<input name="submit" type="submit" id="tagsubmit" value="Add Tag" />
+		$output.='<form class="'. ($message ? 'show' : '') . '" action="'.get_permalink($post->ID).'" method="post" id="tagadder">';
+		$output.='<p><input type="text" name="wp_folksonomy_newtag" placeholder="New tag..." id="wp_folksonomy_newtag" value="" size="14" />
+		<input name="submit" type="submit" id="tagsubmit" value="Submit" />
 		<input type="hidden" name="wp_folk_comment_post_ID" value="'.$post->ID.'" /></p>
 		</form>';
+		$output.="<div class='Tags-examples'>Examples: TODO</div>";
+		if($message) $output.="<div class='AddTag-feedback'>";
+		if($wp_folksonomy_msg == "wait") $output.="<p class='AddTag-feedbackTitle'>Thank you for submitting!</p>";
+		if($message) $output.="<p class='AddTag-feedbackMessage'>$message</p>";
+		if($message) $output.="</div>";
 	}
 	return $output;
 }

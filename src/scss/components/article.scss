@@ -21,13 +21,133 @@
 		margin-bottom: 26px;
 	}
 	.Tags {
+		width: 1000px;
 		display: flex;
 		align-items: center;
 		margin-bottom: 20px;
+		flex-wrap: wrap;
 	}
 	.Tag-label {
 		font-size: 28px;
 		font-weight: 500;
 		margin-right: 30px;
+		margin-bottom: 8px;
+	}
+	.AddTag-container {
+		margin-top: 50px;
+		position: relative;
+	}
+	.AddTag-btn {
+		border-radius: 10px;
+		font-weight: 500;
+		text-align: center;
+		width: 200px;
+		height: 30px;
+		padding-top: 5px;
+		color: white;
+		background-color: $green;
+		background-size: 25px;
+		background-position: 40px center;
+		background-repeat: no-repeat;
+		background-image: url("../images/plus-icon.svg");
+		transition: all 0.3s ease-in-out;
+		cursor: pointer;
+		&:hover {
+			background-color: darken($green, 7%);
+		}
+	}
+	.AddTag-infoBtn {
+		position: absolute;
+		top: -23px;
+		left: 195px;
+		width: 30px;
+		height: 30px;
+		background-size: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-image: url("../images/info-icon.svg");
+		cursor: pointer;
+	}
+	.AddTag-infoBox {
+		position: absolute;
+		top: -67px;
+		left: 240px;
+		width: 306px;
+		height: 57px;
+		color: white;
+		background-color: $grey;
+		padding: 7px;
+		font-size: 12px;
+		position: relative;
+		display: none;
+		&:before {
+			content: "";
+			position: absolute;
+			top: 20px;
+			left: -14px;
+			width: 18px;
+			height: 18px;
+			background-size: 100%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-image: url("../images/arrow-left.svg");
+		}
+	}
+	.AddTag-form {
+		form.show {
+			display: inline-block;
+		}
+		#wp_folksonomy_newtag {
+			width: 285px;
+			padding-bottom: 7px;
+			background: none;
+			border: none;
+			outline: none;
+			border-bottom: 1px solid black;
+			margin-right: 7px;
+			&:focus {
+				background: none;
+				border-bottom: 1px solid black;
+				outline: none;
+			}
+		}
+		#tagsubmit {
+			width: 130px;
+			outline: none;
+			border: none;
+			border-radius: 10px;
+			font-size: 16px;
+			font-weight: 500;
+			padding: 5px 20px;
+			color: white;
+			background-color: $green;
+			transition: all 0.3s ease-in-out;
+			cursor: pointer;
+			&:hover {
+				background-color: darken($green, 7%);
+			}
+		}
+	}
+	.Tags-added {
+		font-size: 14px;
+		font-weight: 500;
+	}
+	.Tags-examples {
+		font-size: 14px;
+		color: $grey;
+	}
+	.AddTag-feedback {
+		margin-top: 30px;
+		padding: 10px 30px 50px 10px;
+		border: 1px solid black;
+		width: 400px;
+		text-align: center;
+		.AddTag-feedbackTitle {
+			font-size: 18px;
+			font-weight: 500;
+		}
+		.AddTag-feedbackMessage {
+			font-size: 12px;
+		}
 	}
 }

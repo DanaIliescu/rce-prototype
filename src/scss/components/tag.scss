@@ -17,7 +17,7 @@
 	&--discover {
 		padding-top: 17px;
 		margin-right: 40px;
-		margin-bottom: 100px;
+		margin-bottom: 80px;
 		font-size: 22px;
 		font-weight: 500;
 		width: 420px;
@@ -30,5 +30,11 @@
 		height: 47px;
 		margin-right: 0px;
 		margin-bottom: 40px;
+		cursor: initial;
+	}
+	&--article {
+		width: unset;
+		padding: 5px 30px;
+		margin-bottom: 8px;
 	}
 }

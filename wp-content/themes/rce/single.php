@@ -13,13 +13,19 @@
 			<?php if($tags): ?>
 				<span class="Tag-label">Tag(s):</span>
 				<?php foreach($tags as $tag): ?>
-					<span class="Tag" data-filter="<?=$tag->slug?>"><?=$tag->name?></span>
+					<span class="Tag Tag--article" data-filter="<?=$tag->slug?>"><?=$tag->name?></span>
 				<?php endforeach; ?>
 			<?php endif; ?>
 		</div>
-		<div class="Row">
-			<div><?php the_content(); ?></div>
-			<?php if(function_exists('wp_folksonomy_add_form')) wp_folksonomy_add_form();?>
+		<div class="Article-content"><?php the_content(); ?></div>
+		<div class="AddTag-container">
+			<div class="AddTag-btn">Add tag</div>
+			<div class="AddTag-infoBtn"></div>
+			<div class="AddTag-infoBox">Tags are keywords that make relevant content for you easier to find on RCE. The ones you add will show up in grey until they are approved.</div>
+			<div class="AddTag-form">
+				<div class="Tags-added">Your added tag(s): TODO</div>
+				<?php if(function_exists('wp_folksonomy_add_form')) wp_folksonomy_add_form();?>
+			</div>
 		</div>
 	</div>
 </div>
