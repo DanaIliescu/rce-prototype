@@ -1,0 +1,23 @@
+.Row {
+	max-width: 1350px;
+	margin: 0 auto;
+	clear: both;
+	overflow: hidden;
+	&.Row--NestedRow {
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+	&.Row--overflow {
+		overflow: visible;
+	}
+	&.Row--flex {
+		display: flex;
+		justify-content: space-between;
+	}
+	&.Row--fullSize {
+		max-width: 100%;
+	}
+	&.Row--top {
+		padding-top: 70px;
+	}
+}

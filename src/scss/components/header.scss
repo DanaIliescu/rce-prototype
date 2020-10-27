@@ -1,0 +1,48 @@
+.Header {
+	width: 100%;
+	background-color: white;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	font-size: 16px;
+	box-shadow: 0 0 3px rgba(0,0,0,0.25);
+	color: black;
+	height: 70px;
+
+	.Header-logo {
+		margin-left: 3.5%;
+		position: absolute;
+		top: 13px;
+		left: 0;
+		width: 60px;
+		height: 40px;
+		background-size: 100%;
+		background-repeat: no-repeat;
+		background-image: url("../images/logo.svg");
+	}
+
+	.Header-navigation {
+		text-align: right;
+		ul.menu {
+			list-style-type: none;
+			li.menu-item {
+				display: inline-block;
+				padding: 10px;
+				margin-top: 5px;
+				text-decoration: none;
+				a {
+					text-decoration: none;
+					display: inline-block;
+					border-radius: 0;
+					color: black;
+				}
+				&.current-menu-item {
+					a {
+						color: grey;
+					}
+				}
+			}
+		}
+	}
+}

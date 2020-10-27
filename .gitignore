@@ -1,0 +1,4 @@
+/node_modules/
+/wp-content/
+/wp-admin/
+.DS_Stores
