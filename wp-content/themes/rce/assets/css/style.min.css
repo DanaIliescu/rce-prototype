@@ -1,0 +1,139 @@
+.Row {
+  max-width: 1350px;
+  margin: 0 auto;
+  clear: both;
+  overflow: hidden; }
+  .Row.Row--NestedRow {
+    margin-left: -10px;
+    margin-right: -10px; }
+  .Row.Row--overflow {
+    overflow: visible; }
+  .Row.Row--flex {
+    display: flex;
+    justify-content: space-between; }
+  .Row.Row--fullSize {
+    max-width: 100%; }
+  .Row.Row--top {
+    padding-top: 70px; }
+
+.Column {
+  width: 100%;
+  float: left;
+  padding: 0 rem-calc(20) 0 rem-calc(20); }
+  .Column.Column--noPadding {
+    padding: 0; }
+  .Column.Column--noPaddingLeft {
+    padding-left: 0; }
+  .Column.Column--noPaddingRight {
+    padding-right: 0; }
+  .Column.Column--verticallyAligned {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+  .Column.Column--Span-1 {
+    width: 8.33333%; }
+  .Column.Column--Span-2 {
+    width: 16.66667%; }
+  .Column.Column--Span-3 {
+    width: 25%; }
+  .Column.Column--Span-4 {
+    width: 33.33333%; }
+  .Column.Column--Span-5 {
+    width: 41.66667%; }
+  .Column.Column--Span-6 {
+    width: 50%; }
+  .Column.Column--Span-7 {
+    width: 58.33333%; }
+  .Column.Column--Span-8 {
+    width: 66.66667%; }
+  .Column.Column--Span-9 {
+    width: 75%; }
+  .Column.Column--Span-10 {
+    width: 83.33333%; }
+  .Column.Column--Span-11 {
+    width: 91.66667%; }
+  .Column.Column--Span-12 {
+    width: 100%; }
+  .Column.Column--Offset-1 {
+    margin-left: 8.33333%; }
+  .Column.Column--Offset-2 {
+    margin-left: 16.66667%; }
+  .Column.Column--Offset-3 {
+    margin-left: 25%; }
+  .Column.Column--Offset-4 {
+    margin-left: 33.33333%; }
+  .Column.Column--Offset-5 {
+    margin-left: 41.66667%; }
+  .Column.Column--Offset-6 {
+    margin-left: 50%; }
+  .Column.Column--Offset-7 {
+    margin-left: 58.33333%; }
+  .Column.Column--Offset-8 {
+    margin-left: 66.66667%; }
+  .Column.Column--Offset-9 {
+    margin-left: 75%; }
+  .Column.Column--Offset-10 {
+    margin-left: 83.33333%; }
+  .Column.Column--Offset-11 {
+    margin-left: 91.66667%; }
+
+.Header {
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  font-size: 16px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+  color: black;
+  height: 70px; }
+  .Header .Header-logo {
+    margin-left: 3.5%;
+    position: absolute;
+    top: 13px;
+    left: 0;
+    width: 60px;
+    height: 40px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../images/logo.svg"); }
+  .Header .Header-navigation {
+    text-align: right; }
+    .Header .Header-navigation ul.menu {
+      list-style-type: none; }
+      .Header .Header-navigation ul.menu li.menu-item {
+        display: inline-block;
+        padding: 10px;
+        margin-top: 5px;
+        text-decoration: none; }
+        .Header .Header-navigation ul.menu li.menu-item a {
+          text-decoration: none;
+          display: inline-block;
+          border-radius: 0;
+          color: black; }
+        .Header .Header-navigation ul.menu li.menu-item.current-menu-item a {
+          color: grey; }
+
+.Footer {
+  background-color: #cdcdcd;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  color: #4d4d4d; }
+
+.Article {
+  width: 70%; }
+  .Article .Article-title a {
+    text-decoration: none;
+    color: black; }
+  .Article .Article-readMore {
+    color: black; }
+
+.Tag {
+  cursor: pointer; }
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9jc3Mvc3R5bGUubWluLmNzcyIsInNvdXJjZVJvb3QiOiIifQ==*/
