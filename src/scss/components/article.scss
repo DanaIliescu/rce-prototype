@@ -1,7 +1,33 @@
 .Article {
-	width: 70%;
+	width: 900px;
+	margin-left: 200px;
+	.Article-title {
+		text-align: center;
+	}
 	.Article-title a {
 		text-decoration: none;
 		color: black;
+		font-size: 36;
+		font-weight: 600;
+		margin-bottom: 22px;
+	}
+	.Article-coverImage {
+		text-align: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		width: 880px;
+		height: 324px;
+		margin-bottom: 26px;
+	}
+	.Tags {
+		display: flex;
+		align-items: center;
+		margin-bottom: 20px;
+	}
+	.Tag-label {
+		font-size: 28px;
+		font-weight: 600;
+		margin-right: 30px;
 	}
 }

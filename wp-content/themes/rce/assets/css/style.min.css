@@ -126,10 +126,32 @@
   color: #4d4d4d; }
 
 .Article {
-  width: 70%; }
+  width: 900px;
+  margin-left: 200px; }
+  .Article .Article-title {
+    text-align: center; }
   .Article .Article-title a {
     text-decoration: none;
-    color: black; }
+    color: black;
+    font-size: 36;
+    font-weight: 600;
+    margin-bottom: 22px; }
+  .Article .Article-coverImage {
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 880px;
+    height: 324px;
+    margin-bottom: 26px; }
+  .Article .Tags {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; }
+  .Article .Tag-label {
+    font-size: 28px;
+    font-weight: 600;
+    margin-right: 30px; }
 
 .Tag {
   width: 150px;
