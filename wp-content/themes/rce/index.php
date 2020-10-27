@@ -3,6 +3,10 @@
 <div class="Row Row--top">
 	<div class="Discover">
 		<?php if (isset($_GET['tag'])):?>
+			<div class="Chosen-tag">
+				<div>Chosen tag:</div>
+				<div class="Tag Tag--discover Tag--chosen"><? echo($_GET['tag'])?></div>
+			</div>
 			<?php $the_query = new WP_Query( 'tag='.$_GET['tag'] ); ?>
 			<?php if ($the_query->have_posts()) : while ($the_query->have_posts()): $the_query->the_post(); ?>
 				<?php 
@@ -10,20 +14,11 @@
 					$imageUrl = get_the_post_thumbnail_url(get_the_id(), 'medium');
 					$tagSlug_string = $tags ? join(',', wp_list_pluck($tags, 'slug')) : "";
 				?>
-				<div class="Chosen-tag">
-					<div>Chosen tag:</div>
-					<div><? echo($_GET['tag'])?></div>
-				</div>
-				<div class="Article filtr-item" data-category="<?=$tagSlug_string?>">
-					<div class="Article-coverImage">
-						<a class="Article-link" style="background-image: url('<?=$imageUrl?>')" href="<?php the_permalink();?>"></a>
+				<div class="ArticleItem filtr-item" data-category="<?=$tagSlug_string?>">
+					<div class="ArticleItem-coverImage">
+						<a class="ArticleItem-link" style="background-image: url('<?=$imageUrl?>')" href="<?php the_permalink();?>"></a>
 					</div>
-					<h2 class="Article-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
-					<?php if($tags) : foreach($tags as $tag): ?>
-						<div class="Tag" data-filter="<?=$tag->slug?>"><?=$tag->name?></div>
-					<?php endforeach; endif;?>
-					<div class="Article-content"><?php the_excerpt(); ?></div>
-					<a class="Article-readMore" href="<?php the_permalink();?>">"Read more"</a>
+					<h2 class="ArticleItem-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
 				</div>
 			<?php endwhile; else : ?>
 				<div>"There are no articles with this tag."</div>

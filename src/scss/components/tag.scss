@@ -22,4 +22,12 @@
 		width: 420px;
 		height: 63px;
 	}
+	&--chosen {
+		padding-top: 9px;
+		background-color: $green;
+		width: 250px;
+		height: 47px;
+		margin-right: 0px;
+		margin-bottom: 40px;
+	}
 }

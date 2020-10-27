@@ -130,8 +130,6 @@
   .Article .Article-title a {
     text-decoration: none;
     color: black; }
-  .Article .Article-readMore {
-    color: black; }
 
 .Tag {
   width: 150px;
@@ -155,9 +153,50 @@
     font-weight: 600;
     width: 420px;
     height: 63px; }
+  .Tag--chosen {
+    padding-top: 9px;
+    background-color: #45AD4A;
+    width: 250px;
+    height: 47px;
+    margin-right: 0px;
+    margin-bottom: 40px; }
 
 .Discover {
   padding-left: 200px;
   padding-right: 200px; }
+  .Discover .Chosen-tag {
+    width: 100%;
+    text-align: center; }
+    .Discover .Chosen-tag div:first-of-type {
+      font-size: 28px;
+      margin-top: 30px;
+      margin-bottom: 10px; }
+  .Discover .ArticleItem {
+    position: relative;
+    width: 398px;
+    height: 405px;
+    border: 1px solid black; }
+    .Discover .ArticleItem .ArticleItem-title a {
+      font-size: 30px;
+      font-weight: 600;
+      padding: 0 35px;
+      text-align: center;
+      position: absolute;
+      bottom: 50px;
+      text-decoration: none;
+      color: black; }
+    .Discover .ArticleItem .ArticleItem-coverImage {
+      position: relative;
+      width: 350px;
+      height: 161px; }
+      .Discover .ArticleItem .ArticleItem-coverImage a {
+        position: absolute;
+        top: 42px;
+        left: 25px;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: all 0.3s ease-in-out; }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9jc3Mvc3R5bGUubWluLmNzcyIsInNvdXJjZVJvb3QiOiIifQ==*/
