@@ -44,4 +44,11 @@
 		cursor: initial;
 		&:hover {background-color: $grey;}
 	}
+	&--example {
+		width: unset;
+		height: 20px;
+		padding: 2px 20px;
+		cursor: initial;
+		&:hover {background-color: $blue;}
+	}
 }

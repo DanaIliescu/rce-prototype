@@ -129,7 +129,22 @@ function wp_folksonomy_tag_adder($output=''){
 		<input name="submit" type="submit" id="tagsubmit" value="Submit" />
 		<input type="hidden" name="wp_folk_comment_post_ID" value="'.$post->ID.'" /></p>
 		</form>';
-		$output.="<div class='Tags-examples'>Examples: TODO</div>";
+		$args = array (
+			'orderby'          => 'tag_count',
+			'order'            => 'DESC',
+			'post_type'        => 'post',
+			'suppress_filters' => false,
+			'hide_empty' => true
+		 );
+		$tags = get_tags($args);
+		$tags = array_slice($tags, 0, 2);
+		$tags_html = '';
+		if($tags) {
+			foreach($tags as $tag) {
+				$tags_html .= "<div class='Tag Tag--example'>" . $tag->slug . "</div>";
+			}
+		}
+		$output.="<div class='Tags-examples'>Examples: $tags_html </div>";
 		if($message) $output.="<div class='AddTag-feedback'>";
 		if($wp_folksonomy_msg == "wait") $output.="<p class='AddTag-feedbackTitle'>Thank you for submitting!</p>";
 		if($message) $output.="<p class='AddTag-feedbackMessage'>$message</p>";

@@ -336,6 +336,13 @@
     cursor: initial; }
     .Tag--added:hover {
       background-color: #C4C4C4; }
+  .Tag--example {
+    width: unset;
+    height: 20px;
+    padding: 2px 20px;
+    cursor: initial; }
+    .Tag--example:hover {
+      background-color: #26238F; }
 
 .Discover {
   padding-left: 120px;
