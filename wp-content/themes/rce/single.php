@@ -23,7 +23,6 @@
 			<div class="AddTag-infoBtn"></div>
 			<div class="AddTag-infoBox">Tags are keywords that make relevant content for you easier to find on RCE. The ones you add will show up in grey until they are approved.</div>
 			<div class="AddTag-form">
-				<div class="Tags-added">Your added tag(s): TODO</div>
 				<?php if(function_exists('wp_folksonomy_add_form')) wp_folksonomy_add_form();?>
 			</div>
 		</div>

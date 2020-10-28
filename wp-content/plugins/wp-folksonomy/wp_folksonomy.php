@@ -10,6 +10,7 @@ Author URI: http://scott.sherrillmix.com/blog/
 
 //Definitions
 global $wpdb;
+global $tag_name;
 define('WP_FOLKSONOMY_TABLE',$wpdb->prefix . "wp_folksonomy");
 define('WP_FOLKSONOMY_VERSION','0.8');
 define('WP_FOLKSONOMY_TAGS_PER_PAGE',10);
@@ -32,6 +33,7 @@ function wp_folksonomy_add_tag(){
 	if($comment_post_ID = (int) $_POST['wp_folk_comment_post_ID']){
 		global $wp_folksonomy_msg;
 		global $wpdb;
+		global $tag_name;
 		$options=wp_folksonomy_get_options();
 		//Just take one tag at a time
 		$tag_name=explode(',',$_POST['wp_folksonomy_newtag']);
@@ -105,6 +107,7 @@ function wp_folksonomy_tag_adder($output=''){
 	if ($options['user']=='register') $user = wp_get_current_user();	
 	if($options['user']=='all'||$user->ID){
 		global $post;
+		global $tag_name;
 		global $wp_folksonomy_msg;
 		if($wp_folksonomy_msg){
 			switch($wp_folksonomy_msg){
@@ -120,6 +123,7 @@ function wp_folksonomy_tag_adder($output=''){
 			case "wait": $message="Your tag will be submitted for review by our content editor soon.";break;
 			}
 		}
+		if($message)$output.="<div class='Tags-added'>Your added tag: <div class='Tag Tag--added'>" . $tag_name . "</div></div>";
 		$output.='<form class="'. ($message ? 'show' : '') . '" action="'.get_permalink($post->ID).'" method="post" id="tagadder">';
 		$output.='<p><input type="text" name="wp_folksonomy_newtag" placeholder="New tag..." id="wp_folksonomy_newtag" value="" size="14" />
 		<input name="submit" type="submit" id="tagsubmit" value="Submit" />

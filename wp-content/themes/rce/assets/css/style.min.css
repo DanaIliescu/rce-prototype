@@ -329,6 +329,13 @@
     width: unset;
     padding: 5px 30px;
     margin-bottom: 8px; }
+  .Tag--added {
+    background-color: #C4C4C4;
+    width: unset;
+    padding: 5px 30px;
+    cursor: initial; }
+    .Tag--added:hover {
+      background-color: #C4C4C4; }
 
 .Discover {
   padding-left: 120px;
