@@ -22,7 +22,7 @@ jQuery(document).ready(function($) {
 		$('.AddTag-infoBtn ').hide();
 		$('.AddTag-form').show();
 	} else {
-		$('.AddTag-btn').click(function(event) {
+		$('.AddTag-btn:not(.disabled)').click(function(event) {
 			$(this).hide();
 			$('.AddTag-infoBtn ').hide();
 			$('.AddTag-form').fadeIn();

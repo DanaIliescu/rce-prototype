@@ -55,6 +55,13 @@
 		&:hover {
 			background-color: darken($green, 7%);
 		}
+		&.disabled {
+			cursor: initial;
+			background-color: $grey;
+			&:hover {
+				background-color: $grey;
+			}
+		}
 	}
 	.AddTag-infoBtn {
 		position: absolute;

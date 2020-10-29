@@ -214,6 +214,11 @@
     cursor: pointer; }
     .Article .AddTag-btn:hover {
       background-color: #3b933f; }
+    .Article .AddTag-btn.disabled {
+      cursor: initial;
+      background-color: #C4C4C4; }
+      .Article .AddTag-btn.disabled:hover {
+        background-color: #C4C4C4; }
   .Article .AddTag-infoBtn {
     position: absolute;
     top: -23px;
