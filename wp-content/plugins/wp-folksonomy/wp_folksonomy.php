@@ -19,7 +19,7 @@ define('WP_FOLKSONOMY_FILE',get_option('siteurl').'/wp-admin/options-general.php
 //Hooks
 add_action('admin_menu', 'wp_folksonomy_menu');
 //add_action('activity_box_end', 'wp_folksonomy_mini');
-add_action('pre_get_posts','wp_folksonomy_add_tag');
+add_action('init','wp_folksonomy_add_tag');
 register_activation_hook(__FILE__,'wp_folksonomy_install');
 //add_filter('the_tags', 'wp_folksonomy_tag_adder'); //invalidates html
 
@@ -30,16 +30,14 @@ function wp_folksonomy_menu() {
 }
 
 function wp_folksonomy_add_tag(){
-	if($comment_post_ID = (int) $_POST['wp_folk_comment_post_ID']){
+	if(isset($_POST['wp_folk_comment_post_ID']) && isset($_POST['wp_folksonomy_newtag'])){
 		global $wp_folksonomy_msg;
 		global $wpdb;
 		global $tag_name;
 		$options=wp_folksonomy_get_options();
-		//Just take one tag at a time
-		$tag_name=explode(',',$_POST['wp_folksonomy_newtag']);
-		$tag_name=trim(strip_tags($tag_name[0]));
-
-		$msg=wp_folksonomy_tagcheck($comment_post_ID,$tag_name);
+		$post_ID = $_POST['wp_folk_comment_post_ID'];
+		$tag_name=trim($_POST['wp_folksonomy_newtag']);
+		$msg=wp_folksonomy_tagcheck($post_ID, $tag_name);
 
 		if(!$msg){
 			if($options['approve']=='wait'){
@@ -59,16 +57,17 @@ function wp_folksonomy_add_tag(){
 							" (object_id,term_id,term_taxonomy_id, tag_datetime, tagger_ip, username, status) " .
 							"VALUES ('". $comment_post_ID ."','". $tagid['term_id'] ."','". $tagid['term_taxonomy_id'] ."','". date("Y-m-d H:i:s") ."','". preg_replace('/[^0-9., ]/', '',$_SERVER['REMOTE_ADDR'])."','$username','$status')";
 			$results = $wpdb->query($sql);
+			$_POST = array();
 			if($results&&function_exists('wp_cache_post_change'))wp_cache_post_change($comment_post_ID);
 		}
 		$wp_folksonomy_msg=$msg;
 	}
 }
 
-function wp_folksonomy_tagcheck($postID,$tag_name){
+function wp_folksonomy_tagcheck($post_ID,$tag_name){
 	global $wpdb;
 	$options=wp_folksonomy_get_options();
-	$status = $wpdb->get_row("SELECT post_status, comment_status FROM $wpdb->posts WHERE ID = '$postID'");
+	$status = $wpdb->get_row("SELECT post_status, comment_status FROM $wpdb->posts WHERE ID = '$post_ID'");
 	$msg="";
 
 	//CHECK TOO FREQUENT
@@ -91,13 +90,13 @@ function wp_folksonomy_tagcheck($postID,$tag_name){
 	//CHECK TAG
 	if ( '' == $tag_name ) return "notag";
 	elseif (strlen($tag_name) > 50) return "toolong";
+
 	//CHECK IF TAG ALREADY EXISTS
 	if($tagID=(is_term($tag_name,'post_tag'))) {
 		$tagID=$tagID['term_id'];
-		$sql="SELECT term_id FROM ".WP_FOLKSONOMY_TABLE." WHERE object_id=$postID AND term_id=$tagID"; 
-		$result = $wpdb->get_var($sql);
-		$tagName = $result->name;
-		if($tagName) return "duplicate";
+		$sql="SELECT * FROM wp_term_relationships WHERE object_id=$post_ID AND term_taxonomy_id=$tagID";
+		$result = $wpdb->get_results($sql);
+		if(!empty($result)) return "duplicate";
 	}
 	return "";
 }
@@ -118,7 +117,7 @@ function wp_folksonomy_tag_adder($output=''){
 			case "draft": $message="That post is a draft.";break;
 			case "nocomments": $message="Sorry adding tags not allowed on this post.";break;
 			case "nopost": $message="Couldn't find post.";break;
-			case "duplicate": $message="Tag already added, but thanks.";break;
+			case "duplicate": $message="The tag you are trying to add already exists in this article.";break;
 			case "toolong": $message="The tag name is too long. Tags should be smaller than 50 characters. Add one tag at a time.";break;
 			case "wait": $message="Your tag will be submitted for review by our content editor soon.";break;
 			}
