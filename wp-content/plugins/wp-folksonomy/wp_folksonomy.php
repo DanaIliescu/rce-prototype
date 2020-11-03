@@ -140,7 +140,7 @@ function wp_folksonomy_tag_adder($output=''){
 		$tags_html = '';
 		if($tags) {
 			foreach($tags as $tag) {
-				$tags_html .= "<div class='Tag Tag--example'>" . $tag->slug . "</div>";
+				$tags_html .= "<div class='Tag Tag--example'>" . $tag->name . "</div>";
 			}
 		}
 		$output.="<div class='Tags-examples'>Examples: $tags_html </div>";

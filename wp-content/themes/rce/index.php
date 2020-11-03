@@ -3,9 +3,10 @@
 <div class="Row Row--top">
 	<div class="Discover">
 		<?php if (isset($_GET['tag'])):?>
+			<?php $tag_name = get_term_by('slug', $_GET['tag'], 'post_tag')->name; ?>
 			<div class="Chosen-tag">
 				<div>Chosen tag:</div>
-				<div class="Tag Tag--discover Tag--chosen"><? echo($_GET['tag'])?></div>
+				<div class="Tag Tag--discover Tag--chosen"><?echo($tag_name);?></div>
 			</div>
 			<?php $the_query = new WP_Query( 'tag='.$_GET['tag'] ); ?>
 			<?php if ($the_query->have_posts()) : while ($the_query->have_posts()): $the_query->the_post(); ?>
