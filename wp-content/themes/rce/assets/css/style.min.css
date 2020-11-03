@@ -154,15 +154,10 @@
   display: none; }
 
 .Home {
-  width: 100%;
+  width: 900px;
   margin-left: 60px; }
   .Home img {
-    margin-bottom: -50px;
-    width: 90%; }
-  .Home h2 {
-    position: absolute;
-    bottom: 20px;
-    left: 160px; }
+    width: 100%; }
 
 .Article {
   width: 900px;
@@ -355,6 +350,10 @@
         background-repeat: no-repeat;
         background-size: cover;
         transition: all 0.3s ease-in-out; }
+
+.SimplePage {
+  width: 900px;
+  margin-left: 200px; }
 
 * {
   box-sizing: border-box;
