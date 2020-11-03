@@ -284,7 +284,7 @@ function wp_folksonomy_rss_feed() {
 }
 
 function wp_folksonomy_search($q){
-	if($s=mysql_escape_string($q)){
+	if($s=$q){
 		global $wpdb;
 		$results=$wpdb->get_col("SELECT name FROM $wpdb->terms  WHERE name LIKE ('%$q%')");
 		echo join( $results, "\n" );

@@ -260,6 +260,12 @@
     .Article .AddTag-feedback .AddTag-feedbackMessage {
       font-size: 12px; }
 
+.ac_results {
+  font-size: 14px;
+  width: 285px; }
+  .ac_results li {
+    padding: 10px 7px; }
+
 .Tag {
   width: 150px;
   height: 30px;

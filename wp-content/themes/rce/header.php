@@ -12,6 +12,9 @@
 	type="text/javascript"
 	data-cookieconsent="ignore"></script>
 
+<!-- Load jquery UI -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <!-- Load fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
 
