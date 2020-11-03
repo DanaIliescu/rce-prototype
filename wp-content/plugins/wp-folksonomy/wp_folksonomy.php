@@ -90,7 +90,7 @@ function wp_folksonomy_tagcheck($postID,$tag_name){
 
 	//CHECK TAG
 	if ( '' == $tag_name ) return "notag";
-	elseif (strlen($tag_name)>25) return "toolong";
+	elseif (strlen($tag_name) > 50) return "toolong";
 	//CHECK IF TAG ALREADY EXISTS
 	if($tagID=(is_term($tag_name,'post_tag'))) {
 		$tagID=$tagID['term_id'];
@@ -119,11 +119,11 @@ function wp_folksonomy_tag_adder($output=''){
 			case "nocomments": $message="Sorry adding tags not allowed on this post.";break;
 			case "nopost": $message="Couldn't find post.";break;
 			case "duplicate": $message="Tag already added, but thanks.";break;
-			case "toolong": $message="Tag too long. Sorry.";break;
+			case "toolong": $message="The tag name is too long. Tags should be smaller than 50 characters. Add one tag at a time.";break;
 			case "wait": $message="Your tag will be submitted for review by our content editor soon.";break;
 			}
 		}
-		if($message)$output.="<div class='Tags-added'>Your added tag: <div class='Tag Tag--added'>" . $tag_name . "</div></div>";
+		if($message && ($wp_folksonomy_msg == 'thanks' || $wp_folksonomy_msg == 'wait'))$output.="<div class='Tags-added'>Your added tag: <div class='Tag Tag--added'>" . $tag_name . "</div></div>";
 		$output.='<form class="'. ($message ? 'show' : '') . '" action="'.get_permalink($post->ID).'" method="post" id="tagadder">';
 		$output.='<p><input type="text" name="wp_folksonomy_newtag" placeholder="New tag..." id="wp_folksonomy_newtag" value="" size="14" />
 		<input name="submit" type="submit" id="tagsubmit" value="Submit" />

@@ -22,8 +22,6 @@
 			<?php if(function_exists('wp_folksonomy_add_form')): ?>
 				<?php if($tags && count($tags) < 10): ?>
 					<div class="AddTag-btn">Add tag</div>
-					<div class="AddTag-infoBtn"></div>
-					<div class="AddTag-infoBox">Tags are keywords that make relevant content for you easier to find on RCE. The ones you add will show up in grey until they are approved.</div>
 					<div class="AddTag-form"><?wp_folksonomy_add_form()?></div>
 				<?php else: ?>
 					<div class="AddTag-btn disabled">Add tag</div>

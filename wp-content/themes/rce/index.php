@@ -22,7 +22,7 @@
 				</div>
 			<?php endwhile; else : ?>
 				<div>"There are no articles with this tag."</div>
-				<div id="#Discover-btn">Discover</div>
+				<div id="#Discover-btn">Discover Articles</div>
 			<?php endif; ?>
 		<?php else: ?>
 			<!-- Search bar here -->

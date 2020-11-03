@@ -219,40 +219,6 @@
       background-color: #C4C4C4; }
       .Article .AddTag-btn.disabled:hover {
         background-color: #C4C4C4; }
-  .Article .AddTag-infoBtn {
-    position: absolute;
-    top: -23px;
-    left: 195px;
-    width: 30px;
-    height: 30px;
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url("../images/info-icon.svg");
-    cursor: pointer; }
-  .Article .AddTag-infoBox {
-    position: absolute;
-    top: -67px;
-    left: 240px;
-    width: 306px;
-    height: 57px;
-    color: white;
-    background-color: #C4C4C4;
-    padding: 7px;
-    font-size: 12px;
-    position: relative;
-    display: none; }
-    .Article .AddTag-infoBox:before {
-      content: "";
-      position: absolute;
-      top: 20px;
-      left: -14px;
-      width: 18px;
-      height: 18px;
-      background-size: 100%;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-image: url("../images/arrow-left.svg"); }
   .Article .AddTag-form form.show {
     display: inline-block; }
   .Article .AddTag-form #wp_folksonomy_newtag {

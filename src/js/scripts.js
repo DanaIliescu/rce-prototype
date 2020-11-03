@@ -9,22 +9,12 @@ jQuery(document).ready(function($) {
 		}
 	});
 
-	$('.AddTag-infoBtn').hover(
-		function() {
-			$('.AddTag-infoBox').fadeIn();
-		},
-		function() {
-			$('.AddTag-infoBox').fadeOut();
-		},
-	);
 	if($('.AddTag-form form').hasClass('show')) {
 		$('.AddTag-btn').hide();
-		$('.AddTag-infoBtn ').hide();
 		$('.AddTag-form').show();
 	} else {
 		$('.AddTag-btn:not(.disabled)').click(function(event) {
 			$(this).hide();
-			$('.AddTag-infoBtn ').hide();
 			$('.AddTag-form').fadeIn();
 		});
 	}
