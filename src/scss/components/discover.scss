@@ -1,6 +1,47 @@
 .Discover {
 	padding-left: 120px;
 	padding-right: 100px;
+	.Letters {
+		font-weight: 600;
+		margin-bottom: 50px;
+		.Letter {
+			display: inline-block;
+			padding: 7px 10px;
+			width: 40px;
+			text-align: center;
+			border: 1px solid black;
+			border-radius: 10px;
+			margin-right: 10px;
+			margin-bottom: 10px;
+			font-weight: 400;
+			cursor: pointer;
+			&.selected {
+				color: white;
+				background-color: $blue;
+			}
+		}
+	}
+	.NoTagFeedback {
+		margin-top: 30px;
+		padding: 10px 30px 50px 10px;
+		border: 1px solid black;
+		width: 400px;
+		text-align: center;
+		.NoTagFeedback-title {
+			font-size: 18px;
+			font-weight: 500;
+		}
+		.NoTagFeedback-message {
+			margin-top: 10px;
+			font-size: 12px;
+		}
+	}
+	.Tags {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+	}
 	.Chosen-tag {
 		width: 100%;
 		text-align: center;
@@ -43,5 +84,15 @@
 				transition: all 0.3s ease-in-out;
 			}
 		}
+	}
+	#Discover-btn {
+		cursor: pointer;
+		text-align: center;
+		margin: 10px;
+		width: 100px;
+		border-radius: 10px;
+		padding: 5px 15px;
+		background-color: $red;
+		color: white;
 	}
 }
