@@ -13,7 +13,7 @@
 		<?php if (isset($_GET['tagStartsWith'])):?>
 			<?php
 				$letter = $_GET['tagStartsWith'];
-				$args = array("hide_empty" => true);
+				$args = array("hide_empty" => true, 'orderby' => 'tag_count', 'order' => 'DESC');
 				$tags = get_tags($args);
 			?>
 			<div class="Tags">
@@ -63,7 +63,7 @@
 
 			<?php else: ?>
 				<?php
-					$args = array("hide_empty" => true);
+					$args = array("hide_empty" => true, 'orderby' => 'tag_count', 'order' => 'DESC');
 					$tags = get_tags($args);
 				?>
 				<div class="Tags">
