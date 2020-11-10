@@ -259,6 +259,15 @@
       font-weight: 500; }
     .Article .AddTag-feedback .AddTag-feedbackMessage {
       font-size: 12px; }
+  .Article .AddTag-info {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-style: italic; }
+    .Article .AddTag-info .AddTag-infoTitle {
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 30px;
+      margin-bottom: 15px; }
 
 .ac_results {
   font-size: 14px;

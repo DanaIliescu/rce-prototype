@@ -21,6 +21,11 @@
 		<div class="AddTag-container">
 			<?php if(function_exists('wp_folksonomy_add_form')): ?>
 				<?php if($tags && count($tags) < 10): ?>
+					<div class="AddTag-info">
+						<hr>
+						<div class="AddTag-infoTitle">Add a tag to the article</div>
+						<div class="AddTag-infoMessage">Tags help other curious readers understand the topic of the articles. Remember to keep them relevant and simple for others to easily understand and identify by them. Read more <a target="_blank" href="http://rce-website.azurewebsites.net/tag-system-guide/">here</a>.</div>
+					</div>
 					<div class="AddTag-btn">Add tag</div>
 					<div class="AddTag-form"><?wp_folksonomy_add_form()?></div>
 				<?php else: ?>

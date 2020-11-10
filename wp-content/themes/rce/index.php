@@ -23,7 +23,7 @@
 						<?php $hasResults = true;?>
 						<div class="Tag Tag--discover" data-filter="<?=$tag->slug?>"><?=$tag->name?></div>
 					<?php else: ?>
-						<?php if ($tag->slug[0] == strtolower($letter)):?>
+						<?php if (strtolower($tag->slug[0]) == strtolower($letter)):?>
 							<?php $hasResults = true;?>
 							<div class="Tag Tag--discover" data-filter="<?=$tag->slug?>"><?=$tag->name?></div>
 						<?php endif; ?>
@@ -40,11 +40,13 @@
 			<?php if (isset($_GET['tag'])):?>
 				<?php $tag_name = get_term_by('slug', $_GET['tag'], 'post_tag')->name; ?>
 				<?php $the_query = new WP_Query( 'tag='.$_GET['tag'] ); ?>
-				<?php if ($the_query->have_posts()) : while ($the_query->have_posts()): $the_query->the_post(); ?>
+				<?php if ($the_query->have_posts()) : ?>
 					<div class="Chosen-tag">
 						<div>Chosen tag:</div>
 						<div class="Tag Tag--discover Tag--chosen"><?echo($tag_name);?></div>
 					</div>
+				<?php endif; ?>
+				<?php if ($the_query->have_posts()) : while ($the_query->have_posts()): $the_query->the_post(); ?>
 					<?php 
 						$tags = get_the_tags();
 						$imageUrl = get_the_post_thumbnail_url(get_the_id(), 'medium');
