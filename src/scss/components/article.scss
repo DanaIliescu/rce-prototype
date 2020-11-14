@@ -1,6 +1,12 @@
 .Article {
 	width: 900px;
 	margin-left: 200px;
+	hr {
+		height: 2px;
+		outline: none;
+		border: none;
+		background-color: black;
+	}
 	.Article-title {
 		text-align: center;
 	}

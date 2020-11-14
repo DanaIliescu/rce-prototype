@@ -162,6 +162,11 @@
 .Article {
   width: 900px;
   margin-left: 200px; }
+  .Article hr {
+    height: 2px;
+    outline: none;
+    border: none;
+    background-color: black; }
   .Article .Article-title {
     text-align: center; }
   .Article .Article-title a {
