@@ -9,3 +9,5 @@
 		<div><?php the_content(); ?></div>
 	</div>
 </div>
+
+<?php get_footer(); ?>

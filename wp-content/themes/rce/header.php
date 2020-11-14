@@ -27,7 +27,8 @@
 	<div class="Row Row--header">
 		<a class="Header-logo" href="<?=home_url()?>"></a>
 		<div class="Header-navigation">
-			<?=wp_nav_menu( array("theme_location"=>"header_menu") )?>
+			<?=wp_nav_menu( array("theme_location"=>"header_menu"))?>
+			<?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>
 		</div>
 		<div class="Header-line"></div>
 	</div>

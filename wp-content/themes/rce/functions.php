@@ -18,21 +18,21 @@ add_action("wp_enqueue_scripts", "rce_add_styles");
 
 // NOTE(Dana): Remove categories functionallity
 function rce_unregister_categories() {
-    unregister_taxonomy_for_object_type( 'category', 'post' );
+	unregister_taxonomy_for_object_type( 'category', 'post' );
 }
 add_action( 'init', 'rce_unregister_categories' );
 
 // NOTE(Dana): Add formatted date fields to post rest api
 add_action( 'rest_api_init', 'create_api_formatted_dates_field' );
 function create_api_formatted_dates_field() {
-    register_rest_field( 'post', 'formatted-dates', array(
-           'get_callback'    => 'get_post_meta_for_api',
-           'schema'          => null,
-        )
-    );
+	register_rest_field( 'post', 'formatted-dates', array(
+			'get_callback'	=> 'get_post_meta_for_api',
+			'schema'		=> null,
+		)
+	);
 }
 function get_post_meta_for_api( $object ) {
-    //get the id of the post object array
+	//get the id of the post object array
 	$post_id = $object['id'];
 	$date = array(
 		"date" => get_the_date("d", $post_id),
