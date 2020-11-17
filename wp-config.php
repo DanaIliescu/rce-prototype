@@ -20,16 +20,33 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'rce' );
+// define( 'DB_NAME', 'rce' );
+
+// /** MySQL database username */
+// define( 'DB_USER', 'root' );
+
+// /** MySQL database password */
+// define( 'DB_PASSWORD', '' );
+
+// /** MySQL hostname */
+// define( 'DB_HOST', '127.0.0.1' );
+
+// /** Database Charset to use in creating database tables. */
+// define( 'DB_CHARSET', 'utf8mb4' );
+
+// /** The Database Collate type. Don't change this if in doubt. */
+// define( 'DB_COLLATE', '' );
+
+define( 'DB_NAME', 'heroku_df1561290ec0957' );
 
 /** MySQL database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'b4a22bee4e9cfd' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', '' );
+define( 'DB_PASSWORD', 'b343af23' );
 
 /** MySQL hostname */
-define( 'DB_HOST', '127.0.0.1' );
+define( 'DB_HOST', 'eu-cdbr-west-02.cleardb.net' );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
