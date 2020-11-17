@@ -1,4 +1,10 @@
 {
+	"repositories":[
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org"
+        }
+    ],
     "scripts": {
         "compile": [
             "chmod -R 777 wp-admin/",
