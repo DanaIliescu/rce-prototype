@@ -46,7 +46,7 @@ function wp_folksonomy_add_tag(){
 				$msg='wait';
 			}else{
 				$status='NEW';
-				wp_add_post_tags($comment_post_ID,$tag_name);
+				wp_add_post_tags($post_ID,$tag_name);
 				$msg='thanks';
 			}
 			$tagid=is_term($tag_name,'post_tag');
@@ -55,7 +55,7 @@ function wp_folksonomy_add_tag(){
 			}
 			$sql="INSERT INTO " . WP_FOLKSONOMY_TABLE .
 							" (object_id,term_id,term_taxonomy_id, tag_datetime, tagger_ip, username, status) " .
-							"VALUES ('". $comment_post_ID ."','". $tagid['term_id'] ."','". $tagid['term_taxonomy_id'] ."','". date("Y-m-d H:i:s") ."','". preg_replace('/[^0-9., ]/', '',$_SERVER['REMOTE_ADDR'])."','$username','$status')";
+							"VALUES ('". $post_ID ."','". $tagid['term_id'] ."','". $tagid['term_taxonomy_id'] ."','". date("Y-m-d H:i:s") ."','". preg_replace('/[^0-9., ]/', '',$_SERVER['REMOTE_ADDR'])."','$username','$status')";
 			$results = $wpdb->query($sql);
 			$_POST = array();
 			if($results&&function_exists('wp_cache_post_change'))wp_cache_post_change($comment_post_ID);
