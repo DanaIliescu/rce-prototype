@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "906392ca85f79c322875a3ff25062bcf",
+    "content-hash": "66c601217f78ddcaba1f8f14e8162059",
     "packages": [],
     "packages-dev": [],
     "aliases": [],
@@ -13,7 +13,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "ext-imagick": "*"
+        "ext-gd": "*"
     },
     "platform-dev": []
 }
